@@ -58,9 +58,9 @@ class RegistrationForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleRegistration}>
-        <Input label="Email" type="email" name="email" value={this.state.email.value} valid={this.state.email.valid} onChange={this.handleInputChange} />
-        <Input label="Password" type="password" name="password" value={this.state.password.value} valid={this.state.password.valid} onChange={this.handleInputChange} />
-        <Button title="Register" disabled={!(this.state.email.valid && this.state.password.valid)}/>
+        <Input label="Email" type="email" name="email" id="email" value={this.state.email.value} valid={this.state.email.valid} onChange={this.handleInputChange} />
+        <Input label="Password" type="password" name="password" id="password" value={this.state.password.value} valid={this.state.password.valid} onChange={this.handleInputChange} />
+        <Button title="Register" id="register-button" disabled={!(this.state.email.valid && this.state.password.valid)}/>
       </form>
     )
   }

@@ -11,7 +11,7 @@ function Input (props) {
   return (
     <label>
       {props.label}
-      <input type={props.type} onChange={(event) => props.onChange(props.name, event)}/>
+      <input id={props.id} type={props.type} onChange={(event) => props.onChange(props.name, event)}/>
       <div className="indicator" style={{
         height: "20px",
         width: "20px",
