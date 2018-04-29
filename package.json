@@ -12,10 +12,12 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
+    "chromedriver": "^2.38.2",
     "copy-webpack-plugin": "^4.5.1",
     "cucumber": "^3.2.1",
     "dotenv-cli": "^1.4.0",
     "dotenv-export": "^2.0.0",
+    "selenium-webdriver": "^4.0.0-alpha.1",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.15"
   },
