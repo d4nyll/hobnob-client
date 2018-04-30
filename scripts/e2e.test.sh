@@ -24,11 +24,14 @@ done
 
 # Only run this if API server is operational
 if $SERVER_UP; then
-  # Run the test in the background
-  npx dotenv cucumberjs spec/cucumber/features -- --compiler js:babel-register --require spec/cucumber/steps &
-
-  # Waits for the next job to terminate - this should be the tests
-  wait -n
+  for browser in "$@"; do
+    export TEST_BROWSER="$browser"
+    echo -e "\n---------- $TEST_BROWSER test start ----------"
+    npx dotenv cucumberjs spec/cucumber/features -- --compiler js:babel-register --require spec/cucumber/steps
+    echo -e "----------- $TEST_BROWSER test end -----------\n"
+  done
+else
+  >&2 echo "Web server failed to start"
 fi
 
 # Terminate all processes within the same process group by sending a SIGTERM signal

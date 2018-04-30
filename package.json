@@ -17,6 +17,7 @@
     "cucumber": "^3.2.1",
     "dotenv-cli": "^1.4.0",
     "dotenv-export": "^2.0.0",
+    "geckodriver": "^1.11.0",
     "selenium-webdriver": "^4.0.0-alpha.1",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.15"
@@ -29,6 +30,9 @@
   "scripts": {
     "build": "rm -rf dist/ && webpack",
     "serve": "./scripts/serve.sh",
-    "test:e2e": "./scripts/e2e.test.sh"
+    "test:e2e": "yarn run test:e2e:all",
+    "test:e2e:all": "yarn run test:e2e:chrome firefox",
+    "test:e2e:chrome": "./scripts/e2e.test.sh chrome",
+    "test:e2e:firefox": "./scripts/e2e.test.sh firefox"
   }
 }
