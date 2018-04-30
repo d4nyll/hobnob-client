@@ -6,8 +6,18 @@ Feature: Register User
 
     When user navigates to /
 
-  Scenario: Password Too Short
+  Scenario Outline: Invalid Input
 
-    When user types in "valid@ema.il" in the "#email" element
-    And user types in "shortpw" in the "#password" element
+    Tests that the 'Register' button is disabled when either input elements contain invalid values
+
+    When user types in "<email>" in the "#email" element
+    And user types in "<password>" in the "#password" element
     Then the "#register-button" element should have a "disabled" attribute
+
+  Examples:
+
+  | testCase       | email         | password       |
+  | Both Invalid   | invalid-email | shortpw        |
+  | Invalid Email  | invalid-email | abcd1234qwerty |
+  | Short Password | valid@ema.il  | shortpw        |
+
