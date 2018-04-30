@@ -27,7 +27,7 @@ class RegistrationForm extends React.Component {
       email: this.state.email.value,
       digest: bcrypt.hashSync(this.state.password.value, 10)
     };
-    const request = new Request('http://localhost:8080/users/', {
+    const request = new Request('http://%%API_SERVER_HOST%%:%%API_SERVER_PORT%%/users/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
