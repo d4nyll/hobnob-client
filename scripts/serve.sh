@@ -6,4 +6,4 @@ export NODE_ENV=test
 
 yarn run build
 
-http-server dist/ -- -p $SERVER_PORT_TEST
+http-server dist/ -p $WEB_SERVER_PORT_TEST
