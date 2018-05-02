@@ -29,9 +29,10 @@
     "react-dom": "^16.3.2"
   },
   "scripts": {
+    "api:init": "git submodule update --init",
     "api:install": "yarn install --cwd api",
     "api:serve": "yarn --cwd api run build && dotenv -e api/.env.example node api/dist/index.js",
-    "api:update": "git submodule update --init",
+    "api:update": "git submodule update --init --remote",
     "build": "rm -rf dist/ && webpack",
     "serve": "./scripts/serve.sh",
     "test:e2e": "yarn run test:e2e:all",
