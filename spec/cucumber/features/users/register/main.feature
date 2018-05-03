@@ -4,7 +4,7 @@ Feature: Register User
 
   Background: Navigate to the Registration Page
 
-    When user navigates to /
+    When user navigates to /register
 
   Scenario Outline: Invalid Input
 

@@ -21,6 +21,7 @@
     "dotenv-cli": "^1.4.0",
     "dotenv-export": "^2.0.0",
     "geckodriver": "^1.11.0",
+    "pushstate-server": "^3.0.1",
     "selenium-webdriver": "^4.0.0-alpha.1",
     "string-replace-loader": "^2.1.1",
     "webpack": "^4.6.0",
@@ -29,7 +30,9 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
   },
   "scripts": {
     "api:init": "git submodule update --init",
