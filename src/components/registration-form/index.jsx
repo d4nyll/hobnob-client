@@ -9,6 +9,7 @@ class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      userId: null,
       email: {
         value: "",
         valid: null
@@ -43,8 +44,8 @@ class RegistrationForm extends React.Component {
           throw new Error('Error creating new user');
         }
       })
-      .then(console.log)
-      .catch(console.log)
+      .then(userId => this.setState({ userId }))
+      .catch(console.error)
   }
 
   handleInputChange = (name, event) => {
@@ -56,6 +57,9 @@ class RegistrationForm extends React.Component {
   }
 
   render() {
+    if(this.state.userId) {
+      return <div id="registration-success">You have registered successfully</div>
+    }
     return (
       <form onSubmit={this.handleRegistration}>
         <Input label="Email" type="email" name="email" id="email" value={this.state.email.value} valid={this.state.email.valid} onChange={this.handleInputChange} />
