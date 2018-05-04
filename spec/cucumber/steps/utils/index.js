@@ -1,7 +1,7 @@
 import Chance from 'chance';
 const chance = new Chance();
 
-function generateSampleData (type, valid) {
+function generateSampleData (type, valid = true) {
   switch (type) {
     case 'email':
       return valid ? chance.email() : chance.string()
