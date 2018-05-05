@@ -9,7 +9,7 @@ chai.use(chaiAsPromised);
 Then(/^the (?:"|')([\.#\w-]+)(?:"|') element should( not)? have a (?:"|')([\w_-]+)(?:"|') attribute$/, async function (selector, negation, attributeName) {
   const element = await this.driver.findElement(By.css(selector));
   const attributeValue = await element.getAttribute(attributeName);
-  const expectedValue = negation ? null : 'true';
+  const expectedValue = negation ? null : attributeValue;
   assert.equal(attributeValue, expectedValue);
 });
 
