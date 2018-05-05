@@ -12,3 +12,9 @@ When(/^user types in an? (in)?valid (\w+) in the (?:"|')([\.#\w-]+)(?:"|') eleme
   this.element = await this.driver.findElement(By.css(selector));
   return this.element.sendKeys(textToInput);
 });
+
+Then(/^user types in his\/her (\w+) in the (?:"|')([\.#\w-]+)(?:"|') element$/, async function (contextKey, selector) {
+  const textToInput = this[contextKey] || "";
+  this.element = await this.driver.findElement(By.css(selector));
+  return Promise.all(textToInput.split('').map((c) => this.element.sendKeys(c)));
+});
